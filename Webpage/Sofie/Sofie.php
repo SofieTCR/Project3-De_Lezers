@@ -7,6 +7,7 @@
     <title>Sofie's Pagina</title>
 </head>
 <body>
+    <?php  include("../Menu/menu.php"); ?>
     Hallo dit is sofie's pagina.
     <?php 
         echo("Het is vandaag: " . date("l"));

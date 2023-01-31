@@ -7,10 +7,7 @@
     <title>Homepage</title>
 </head>
 <body>
+    <?php  include("../Menu/menu.php"); ?>
     Dit is de homepage.
-    <a href="./Sofie/Sofie.php">Sofie's pagina</a>
-    <a href="./emily/emily.php">Emily's pagina</a>
-    <a href="./rohan/rohan.php">Rohan's pagina</a>
-    <a href="./Shondrique/shondrique.php">Shondrique's pagina</a>
 </body>
 </html>
