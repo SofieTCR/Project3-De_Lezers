@@ -7,7 +7,7 @@
     <title>Homepage</title>
 </head>
 <body>
-    <?php  include("../Menu/menu.php"); ?>
+    <?php  include("./Menu/menu.php"); ?>
     Dit is de homepage.
 </body>
 </html>
