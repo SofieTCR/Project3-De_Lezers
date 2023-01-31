@@ -7,6 +7,7 @@
     <title>Rohan</title>
 </head>
 <body>
+<?php  include("../Menu/menu.php"); ?> 
 <p> dit is Rohan's pagina</p>
 <?php 
 echo ("Vandaag: " . date("l"));
