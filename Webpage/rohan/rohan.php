@@ -7,6 +7,9 @@
     <title>Rohan</title>
 </head>
 <body>
-    Dit is Rohan's pagina
+<p> dit is Rohan's pagina</p>
+<?php 
+echo ("Vandaag: " . date("l"));
+?>
 </body>
 </html>
