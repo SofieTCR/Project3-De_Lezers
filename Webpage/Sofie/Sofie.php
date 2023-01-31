@@ -8,5 +8,8 @@
 </head>
 <body>
     Hallo dit is sofie's pagina.
+    <?php 
+        echo("Het is vandaag: " . date("l"));
+    ?>
 </body>
 </html>
