@@ -7,7 +7,8 @@
     <title>Shondrique</title>
 </head>
 <body>
-    Shondrique's zijn pagina 
+    Shondrique's zijn pagina
+    <?php  include("../Menu/menu.php"); ?> 
     <?php 
     echo("Het is vandaag: " . date("l"));
 ?>
