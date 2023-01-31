@@ -8,9 +8,9 @@
 </head>
 <body>
 <?php  include("../Menu/menu.php"); ?> 
-<p> dit is Rohan's pagina</p>
-<?php 
-echo ("Vandaag: " . date("l"));
+    Rohan's pagina
+    <?php 
+    echo("Het is vandaag: " . date("l"));
 ?>
 </body>
 </html>
