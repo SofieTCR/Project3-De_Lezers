@@ -7,6 +7,9 @@
     <title>Shondrique</title>
 </head>
 <body>
-    <p>Shondrique's zijn pagina</p> 
+    Shondrique's zijn pagina 
+    <?php 
+    echo("Het is vandaag: " . date("l"));
+?>
 </body>
 </html>
