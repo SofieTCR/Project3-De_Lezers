@@ -7,9 +7,10 @@
     <title>Rohan</title>
 </head>
 <body>
-<p> dit is Rohan's pagina</p>
-<?php 
-echo ("Vandaag: " . date("l"));
+<?php  include("../Menu/menu.php"); ?> 
+    Rohan's pagina
+    <?php 
+    echo("Het is vandaag: " . date("l"));
 ?>
 </body>
 </html>
