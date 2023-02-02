@@ -8,13 +8,15 @@
 </head>
 <body>
     
+<?php  include("../Menu/menu.php"); ?>
+
 <h1>HTML Forms</h1>
 
-<form action="action_page.php">
+<form action="action_page.php" method="POST">
   <label for="usern">Username:</label><br>
   <input type="text" id="usern" name="usern" value="John"><br>
   <label for="pass">Password:</label><br>
-  <input type="password" id="pwd" name="pwd" value="Doe"><br><br>
+  <input type="password" id="pwd" name="pwd" value="Doe" maxlength="5"><br><br>
   <input type="submit" value="Submit">
 </form> 
 
