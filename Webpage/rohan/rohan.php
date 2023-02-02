@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohan</title>
 </head>
-<body>
+<body>   
 <?php  include("../Menu/menu.php"); ?> 
-    Rohan's pagina
-    <?php 
-    echo("Het is vandaag: " . date("l"));
-?>
+    <p>Rohan's pagina</p>
 </body>
 </html>
