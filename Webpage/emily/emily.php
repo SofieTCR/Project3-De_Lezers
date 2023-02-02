@@ -12,6 +12,8 @@
 
     <h1>Hello mijn naam is Emily</h1>
     <p>Voor project 3 gaan we een book webshop maken.</p>
+    
+    <br>
 
     <?php 
     echo date("l") . "<br>";
