@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php  include("../Menu/menu.php"); ?>
-    <p>Rohan's pagina</p>
+    <p>Rohan's subpagina</p>
    
    <?php 
     echo date("l") . "<br>";

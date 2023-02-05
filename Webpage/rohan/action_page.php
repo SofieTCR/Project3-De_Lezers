@@ -25,7 +25,7 @@
         echo "<br>Username groter  dan 4 tekens<br>";
     }
 
-    else if($len > 10){
+    elseif($len > 10){
         echo "username moet korter dan 10";
     }
    ?>
