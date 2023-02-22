@@ -1,5 +1,9 @@
-p
+/* CSS Vars */
+:root
 {
-    font-family: 'Libre Barcode 39 Text';
-    font-size: 48px;
+    --Main-Colour: #E5DCC6;
+    --Accent-Colour-1: #866D50;
+    --Accent-Colour-2: #775E41;
 }
+
+/* Homepage CSS */
