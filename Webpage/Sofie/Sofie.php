@@ -11,6 +11,13 @@
     Hallo dit is sofie's pagina.
     <?php 
         echo("Het is vandaag: " . date("l"));
+
     ?>
+
+    <form action="./action_page.php" method="post">
+        <input type="text" name="uname" id="uname"><br>
+        <input type="password" name="pword" id="pword"><br>
+        <input type="submit">
+    </form>
 </body>
 </html>
