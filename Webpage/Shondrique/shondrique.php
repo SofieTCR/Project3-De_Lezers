@@ -12,5 +12,9 @@
     <?php 
     echo("Het is vandaag: " . date("l"));
 ?>
+
+
+
+
 </body>
 </html>
