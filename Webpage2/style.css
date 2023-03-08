@@ -20,6 +20,30 @@
 
 /* Menu CSS */
 
+/* Footer CSS */
+#Footer_Div
+{
+    max-width: 100vw;
+    height: 6vh;
+    background-color: var(--Accent-Colour-2);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Footer_Links
+{
+    font-family: 'Imprima', sans-serif;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.Footer_Icons
+{
+    height: 5vh;
+    margin: 0.25vw;
+}
+
 /* Homepage CSS */
 
 /* Levering & Retour */
