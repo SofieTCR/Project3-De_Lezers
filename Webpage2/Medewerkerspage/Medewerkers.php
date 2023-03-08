@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <?php include("../Library/menu.php"); ?>
+<?php include("../Library/head.html"); ?>
 
     <h1>Ons Medewerkers</h1>
 
@@ -24,9 +24,15 @@
     <img src="" alt="Foto van Emily">
     <h2>Emily</h2>
     
-
+    
     <h1>Ons Bedrijf</h1>
 
+    <p>Onze bedrijf De Lezers verkoopt boeken voor gebruikers. Deze boeke zijn speciaal voor Lezers, 
+    dikke boeken met wel 200 pagina's. Onze website heeft een makkelijk te navigeren interface met 
+    zoekfilters om de gebruikers te helpen biedt ook informatie over elk boek, de bladzijden, de 
+    samenvatting en meer. Gebruiekers kunnen boeken kopen via de website  </p>
+
     <img src="" alt="">
+
 </body>
 </html>
