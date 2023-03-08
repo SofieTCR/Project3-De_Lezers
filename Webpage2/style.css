@@ -6,33 +6,51 @@
     --Accent-Colour-2: #775E41;
 }
 
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
 /* General Information
     Main Font: font-family: 'Imprima', sans-serif;
     Logo Font: font-family: 'Libre Barcode 39 Text';
+    pagina css class&id names start with <pagename>_
 */
 
 /* Menu CSS */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none; 
-  }
-  
-  li a:hover {
-    background-color: #111;
-  }
+
 /* Homepage CSS */
+
+/* Levering & Retour */
+#LeveringRetour_Main
+{
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+}
+.LeveringRetour_Section
+{
+    width: 35vw;
+    height: 26vh;
+    margin-left: 8vw;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    font-family: 'Imprima', sans-serif;
+}
+.LeveringRetour_Subtitle
+{
+    margin-bottom: 2vh;
+}
+.LeveringRetour_Paragraph
+{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.LeveringRetour_ListItem
+{
+    margin-left: 2vw;
+}
