@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medewerkers en bedrijf</title>
-</head>
-<body>
 
 <?php include("../Library/head.html"); ?>
+
+<body>
+
+<?php include("../Library/menu.php"); ?>
 
     <h1>Ons Medewerkers</h1>
 
@@ -30,7 +27,7 @@
     <p>Onze bedrijf De Lezers verkoopt boeken voor gebruikers. Deze boeke zijn speciaal voor Lezers, 
     dikke boeken met wel 200 pagina's. Onze website heeft een makkelijk te navigeren interface met 
     zoekfilters om de gebruikers te helpen biedt ook informatie over elk boek, de bladzijden, de 
-    samenvatting en meer. Gebruiekers kunnen boeken kopen via de website  </p>
+    samenvatting en meer. Gebruikers kunnen boeken kopen via de website  </p>
 
     <img src="" alt="">
 
