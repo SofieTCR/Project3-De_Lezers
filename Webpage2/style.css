@@ -28,10 +28,11 @@ header{
   padding: 0;
   overflow: hidden;
   display: flex; 
+  align-items: center;
 }
 .p_menulogo{
     font-family: 'Libre Barcode 39 Text';
-    line-height: 50px;
+    line-height: 8vh;
     font-size: 25px;
     padding-right: 15px;
 
@@ -43,6 +44,7 @@ header{
     text-align: center;
     border: 9px;
     border-radius: 14px;
+   
   }
 
 .menu_li a {
