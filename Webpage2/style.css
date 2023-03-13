@@ -14,12 +14,50 @@
 
 /* General Information
     Main Font: font-family: 'Imprima', sans-serif;
-    Logo Font: font-family: 'Libre Barcode 39 Text';
+    Logo Font:  font-family: 'Libre Barcode 39 Text';
     pagina css class&id names start with <pagename>_
 */
 
 /* Menu CSS */
+header{
+    background-color: var(--Accent-Colour-1);
+}
+.ul_menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex; 
+}
+.p_menulogo{
+    font-family: 'Libre Barcode 39 Text';
+    line-height: 50px;
+    font-size: 25px;
+    padding-right: 15px;
 
+}
+
+.menu_li {
+    background-color: var(--Accent-Colour-1);
+    margin-right: 20px;
+    text-align: center;
+    border: 9px;
+    border-radius: 14px;
+  }
+
+.menu_li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu_li a:hover {
+    background-color: var(--Accent-Colour-2);
+    border: 9px;
+    border-radius: 14px;
+  }
 /* Footer CSS */
 #Footer_Div
 {
