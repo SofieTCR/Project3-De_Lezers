@@ -25,7 +25,7 @@
         zoekfilters om de gebruikers te helpen biedt ook informatie over elk boek, de bladzijden, de 
         samenvatting en meer. Gebruikers kunnen boeken kopen via de website  </p>
 
-        <img src="" alt="">
+        <img src="" alt="bedrijf">
     </main>
 
     
