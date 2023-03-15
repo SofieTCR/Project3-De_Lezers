@@ -121,6 +121,10 @@ header{
 
 /* Medewerkers css */
 
+#med_main
+{
+    min-height: 86vh;
+}
 .medbody {
     background-color: #E5DCC6;
 }
