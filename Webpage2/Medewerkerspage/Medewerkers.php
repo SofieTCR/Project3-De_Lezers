@@ -7,19 +7,17 @@
 
 <?php include("../Library/menu.php"); ?>
 
-    <h1>Ons Medewerkers</h1>
+    <h1>Onze Medewerkers</h1>
 
-    <img src="" alt="Foto van Shondrique"> 
-    <h2>Shondrique</h2>
 
-    <img src="" alt="Foto van Rohan">
-    <h2>Rohan</h2>
+    <div class="flex-container">
+        <div><img src="" alt="Foto van Shondrique"><h2>Shondrique</h2></div>
+        <div><img src="" alt="Foto van Emily"><h2>Emily</h2></div>
+        <div><img src="" alt="Foto van Sofie"><h2>Sofie</h2></div>
+        <div><img src="" alt="Foto van Rohan"><h2>Rohan</h2></div>  
+    </div>
+
     
-    <img src="" alt="Foto van Sofie">
-    <h2>Sofie</h2>
-
-    <img src="" alt="Foto van Emily">
-    <h2>Emily</h2>
     
     
     <h1>Ons Bedrijf</h1>
