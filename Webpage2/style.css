@@ -120,6 +120,54 @@ header{
     margin-left: 2vw;
 }
 
+/* Webshop Sofie*/
+#Webshop_Main
+{
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 80vh;
+    padding-top: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Imprima', sans-serif;
+}
+#Webshop_FilterDiv
+{
+    width: 18vw;
+    min-height: 60vh;
+    background-color: lightgray;
+
+}
+#Webshop_ProductDiv
+{
+    width: 70vw;
+    min-height: 60vh;
+    /* background-color: green; */
+    border: 4px solid var(--Accent-Colour-2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+}
+#Webshop_SearchBar
+{
+    width: 65vw;
+    height: 8vh;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    background-color: lightgray;
+}
+.Webshop_Product
+{
+    width: 20vw;
+    height: 30vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    margin-left: 2.5vw;
+    background-color: paleturquoise;
+}
+
 /* Medewerkers CSS Emily*/
 
 #med_main
@@ -135,7 +183,7 @@ header{
     justify-content: space-evenly;
 }
   
-.med-flex-container > div {
+.med-flex-container div {
     background-color: #f1f1f1;
     margin: 10px;
     padding: 20px;
@@ -154,5 +202,3 @@ header{
     display: flex;
     text-align: right;
 }
-
-
