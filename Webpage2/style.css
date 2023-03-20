@@ -217,4 +217,19 @@ header{
     margin-left: 50vw;
 }
 
+.meddiv {
+   
+   width: 80vw;
+   font-size: large;
+   
+}
 
+.medimg {
+    width: 25vw;
+    height: 12vw;
+    margin-left: 8.5vw;
+}
+
+.medh2 {
+    margin-top: 120px;
+}
