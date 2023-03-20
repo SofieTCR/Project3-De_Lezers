@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2023 at 11:03 AM
+-- Generation Time: Mar 20, 2023 at 11:04 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -75,6 +75,7 @@ CREATE TABLE `boek` (
 
 CREATE TABLE `klachten` (
   `klachtId` int(11) NOT NULL,
+  `Klant_klantId` int(11) NOT NULL,
   `bericht` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -107,10 +108,25 @@ CREATE TABLE `klant` (
 CREATE TABLE `product` (
   `productId` int(11) NOT NULL,
   `naam` varchar(45) DEFAULT NULL,
+  `Soort` varchar(45) DEFAULT NULL,
   `prijs` float NOT NULL,
   `vooraad` double NOT NULL,
   `fotoURL` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`productId`, `naam`, `Soort`, `prijs`, `vooraad`, `fotoURL`) VALUES
+(4, 'Harry Potter', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
+(5, 'Harry Potter1', NULL, 9.5, 17, 'Harry_Potter_bundle.png'),
+(6, 'Harry Potter2', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
+(7, 'Harry Potter3', NULL, 25.5, 17, 'Harry_Potter_bundle.png'),
+(8, 'Harry Potter4', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
+(9, 'Harry Potter5', NULL, 44.99, 17, 'Harry_Potter_bundle.png'),
+(10, 'Harry Potter6', NULL, 199.99, 17, 'Harry_Potter_bundle.png'),
+(11, 'Max en de maximonsters', NULL, 99.99, 99, 'maxmaximonsters.png');
 
 -- --------------------------------------------------------
 
@@ -152,13 +168,14 @@ ALTER TABLE `boek`
 -- Indexes for table `klachten`
 --
 ALTER TABLE `klachten`
-  ADD PRIMARY KEY (`klachtId`);
+  ADD PRIMARY KEY (`klachtId`),
+  ADD KEY `fk_Klachten_Klant1_idx` (`Klant_klantId`);
 
 --
 -- Indexes for table `klant`
 --
 ALTER TABLE `klant`
-  ADD PRIMARY KEY (`klantId`,`Password`);
+  ADD PRIMARY KEY (`klantId`);
 
 --
 -- Indexes for table `product`
@@ -173,6 +190,40 @@ ALTER TABLE `product_has_boek`
   ADD PRIMARY KEY (`Product_productId`,`Boek_boekId`),
   ADD KEY `fk_Product_has_Boek_Boek1_idx` (`Boek_boekId`),
   ADD KEY `fk_Product_has_Boek_Product1_idx` (`Product_productId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `bestelling`
+--
+ALTER TABLE `bestelling`
+  MODIFY `bestellingId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `boek`
+--
+ALTER TABLE `boek`
+  MODIFY `boekId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `klachten`
+--
+ALTER TABLE `klachten`
+  MODIFY `klachtId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `klant`
+--
+ALTER TABLE `klant`
+  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -190,6 +241,12 @@ ALTER TABLE `bestelling`
 ALTER TABLE `bestelling_has_product`
   ADD CONSTRAINT `fk_Bestelling_has_Product_Bestelling1` FOREIGN KEY (`Bestelling_bestellingId`) REFERENCES `bestelling` (`bestellingId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Bestelling_has_Product_Product1` FOREIGN KEY (`Product_productId`) REFERENCES `product` (`productId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `klachten`
+--
+ALTER TABLE `klachten`
+  ADD CONSTRAINT `fk_Klachten_Klant1` FOREIGN KEY (`Klant_klantId`) REFERENCES `klant` (`klantId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `product_has_boek`

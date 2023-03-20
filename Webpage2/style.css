@@ -167,6 +167,19 @@ header{
     margin-left: 2.5vw;
     background-color: paleturquoise;
 }
+.Webshop_Product_Title
+{
+    color: red;
+}
+.Webshop_Product_Price
+{
+    color: red;
+}
+.Webshop_Product_Img
+{
+    width: 20vw;
+    height: 20vh;
+}
 
 /* Medewerkers CSS Emily*/
 
