@@ -1,4 +1,4 @@
-/* CSS Vars */
+/* CSS Vars Sofie*/
 :root
 {
     --Main-Colour: #E5DCC6;
@@ -18,7 +18,7 @@
     pagina css class&id names start with <pagename>_
 */
 
-/* Menu CSS */
+/* Menu CSS Shondrique*/
 header{
     background-color: var(--Accent-Colour-1);
 }
@@ -59,8 +59,9 @@ header{
     background-color: var(--Accent-Colour-2);
     border: 9px;
     border-radius: 14px;
-  }
-/* Footer CSS */
+}
+
+/* Footer CSS Sofie*/
 #Footer_Div
 {
     max-width: 100vw;
@@ -86,7 +87,7 @@ header{
 
 /* Homepage CSS */
 
-/* Levering & Retour */
+/* Levering & Retour Sofie*/
 #LeveringRetour_Main
 {
     background-color: var(--Main-Colour);
@@ -119,7 +120,68 @@ header{
     margin-left: 2vw;
 }
 
-/* Medewerkers css */
+/* Webshop Sofie*/
+#Webshop_Main
+{
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 80vh;
+    padding-top: 6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Imprima', sans-serif;
+}
+#Webshop_FilterDiv
+{
+    width: 18vw;
+    min-height: 60vh;
+    background-color: lightgray;
+
+}
+#Webshop_ProductDiv
+{
+    width: 70vw;
+    min-height: 60vh;
+    /* background-color: green; */
+    border: 4px solid var(--Accent-Colour-2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+}
+#Webshop_SearchBar
+{
+    width: 65vw;
+    height: 8vh;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    background-color: lightgray;
+}
+.Webshop_Product
+{
+    width: 20vw;
+    height: 30vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    margin-left: 2.5vw;
+    background-color: paleturquoise;
+}
+.Webshop_Product_Title
+{
+    color: red;
+}
+.Webshop_Product_Price
+{
+    color: red;
+}
+.Webshop_Product_Img
+{
+    width: 20vw;
+    height: 20vh;
+}
+
+/* Medewerkers CSS Emily*/
 
 #med_main
 {
@@ -134,7 +196,7 @@ header{
     justify-content: space-evenly;
 }
   
-.med-flex-container > div {
+.med-flex-container div {
     background-color: #f1f1f1;
     margin: 10px;
     padding: 20px;
@@ -155,19 +217,4 @@ header{
     margin-left: 50vw;
 }
 
-.meddiv {
-   
-   width: 80vw;
-   font-size: large;
-   
-}
 
-.medimg {
-    width: 25vw;
-    height: 12vw;
-    margin-left: 8.5vw;
-}
-
-.medh2 {
-    margin-top: 120px;
-}
