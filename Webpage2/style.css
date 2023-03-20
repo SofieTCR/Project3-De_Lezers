@@ -138,7 +138,7 @@ header{
     background-color: #f1f1f1;
     margin: 10px;
     padding: 20px;
-    font-size: 30px;
+    font-size: 20px;
     height: 20vw;
     width: 12vw;
     
@@ -149,9 +149,25 @@ header{
     justify-content: center;
 }
 
-.medp {
-    display: flex;
+.medpdiv {
     text-align: right;
+    width: 25vw;
+    margin-left: 50vw;
 }
 
+.meddiv {
+   
+   width: 80vw;
+   font-size: large;
+   
+}
 
+.medimg {
+    width: 25vw;
+    height: 12vw;
+    margin-left: 8.5vw;
+}
+
+.medh2 {
+    margin-top: 120px;
+}
