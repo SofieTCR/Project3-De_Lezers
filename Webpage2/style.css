@@ -212,41 +212,28 @@ header{
 }
 
 .medpdiv {
-    text-align: right;
-    width: 25vw;
-    margin-left: 50vw;
+    margin-top: 5vh;
+    width: 30vw;
+    
 }
 
 .meddiv {
    
-   width: 80vw;
    font-size: large;
+   display: flex;
+   justify-content: center;
+   flex-direction: row-reverse;
+
    
 }
 
 .medimg {
     width: 25vw;
     height: 12vw;
-    margin-left: 8.5vw;
+    margin-right: 8.5vw;
 }
 
 .medh2 {
     margin-top: 120px;
 }
 
-.meddiv {
-   
-   width: 80vw;
-   font-size: large;
-   
-}
-
-.medimg {
-    width: 25vw;
-    height: 12vw;
-    margin-left: 8.5vw;
-}
-
-.medh2 {
-    margin-top: 120px;
-}
