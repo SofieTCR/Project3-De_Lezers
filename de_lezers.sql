@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2023 at 11:04 AM
+-- Generation Time: Mar 22, 2023 at 09:29 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -67,6 +67,13 @@ CREATE TABLE `boek` (
   `minleeftijd` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `boek`
+--
+
+INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Soort`, `Uitgever`, `Gewicht`, `Afmetingx`, `Afmetingy`, `Afmetingz`, `Verchenen`, `minleeftijd`) VALUES
+(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis', 'Fictie', NULL, 'Hans', 192, 23, 13, 2.8, 2018, 12);
+
 -- --------------------------------------------------------
 
 --
@@ -122,7 +129,7 @@ INSERT INTO `product` (`productId`, `naam`, `Soort`, `prijs`, `vooraad`, `fotoUR
 (4, 'Harry Potter', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
 (5, 'Harry Potter1', NULL, 9.5, 17, 'Harry_Potter_bundle.png'),
 (6, 'Harry Potter2', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
-(7, 'Harry Potter3', NULL, 25.5, 17, 'Harry_Potter_bundle.png'),
+(7, 'Harry Potter3', NULL, 25.5, 17, 'maxmaximonsters.png'),
 (8, 'Harry Potter4', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
 (9, 'Harry Potter5', NULL, 44.99, 17, 'Harry_Potter_bundle.png'),
 (10, 'Harry Potter6', NULL, 199.99, 17, 'Harry_Potter_bundle.png'),
@@ -138,6 +145,13 @@ CREATE TABLE `product_has_boek` (
   `Product_productId` int(11) NOT NULL,
   `Boek_boekId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product_has_boek`
+--
+
+INSERT INTO `product_has_boek` (`Product_productId`, `Boek_boekId`) VALUES
+(4, 1);
 
 --
 -- Indexes for dumped tables
@@ -205,7 +219,7 @@ ALTER TABLE `bestelling`
 -- AUTO_INCREMENT for table `boek`
 --
 ALTER TABLE `boek`
-  MODIFY `boekId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `boekId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `klachten`
