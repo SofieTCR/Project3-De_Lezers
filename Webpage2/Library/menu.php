@@ -16,17 +16,27 @@
         
         // Check if you're logged in by checking the existence of a user id. 
         if (isset($_SESSION["klantId"])) {
-            //echo "logged in";
-            // if administrator
+            echo "<li class=menu_li><a href=../Inlog/Uitlog.php>Uitloggen</a></li>";
 
             // Include the db functions
             include("../Library/Database_Functions.php");
 
             // Get the db ready.
             $MyDB = GetDatabase("localhost", "root", "", "de_lezers");
-        
-            echo "<li class=menu_li><a href=../Systeembeheerder>Beheer</a></li>";
 
+            try {
+                // Get SQL string ready
+                $sql = "SELECT klant.Administrator FROM klant WHERE klant.klantId = '" . $_SESSION["klantId"] . "'";
+
+                $query = ExecuteQuerry($MyDB, $sql);
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                if ($result[0]["Administrator"] == 1) { // Check if the user has the administrator attribute. 
+                    echo "<li class=menu_li><a href=../Systeembeheerder>Beheer</a></li>";
+                }
+            } catch (PDOException $th) {
+                //throw $th;
+            }
         }
         else {
             echo "<li class=menu_li><a href=../Inlog/Inlog.php>Login</a></li>";
