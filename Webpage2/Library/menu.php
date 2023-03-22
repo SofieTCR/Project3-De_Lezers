@@ -8,5 +8,19 @@
     <li class="menu_li"><a href="../LeveringRetour/Leveringretour.php">Retour Policy</a></li>
     <li class="menu_li"><a href="#">Milleu</a></li>
     <li class="menu_li"><a href="#">Contact</a></li>
+    <?php
+        session_start();
+
+        if (isset($_SESSION["klantid"])) {
+            //echo "logged in";
+            // if administrator
+            echo "<li class=menu_li><a href=../Systeembeheerder>Beheer</a></li>";
+
+        }
+        else {
+            echo "<li class=menu_li><a href=../Inlog/Inlog.php>Login</a></li>";
+        }
+
+    ?>
 </ul>
 </header>
