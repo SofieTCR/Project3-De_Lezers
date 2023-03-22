@@ -9,11 +9,22 @@
     <li class="menu_li"><a href="#">Milleu</a></li>
     <li class="menu_li"><a href="#">Contact</a></li>
     <?php
-        session_start();
-
-        if (isset($_SESSION["klantid"])) {
+        // Enable the session if not already enabled
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        
+        // Check if you're logged in by checking the existence of a user id. 
+        if (isset($_SESSION["klantId"])) {
             //echo "logged in";
             // if administrator
+
+            // Include the db functions
+            include("../Library/Database_Functions.php");
+
+            // Get the db ready.
+            $MyDB = GetDatabase("localhost", "root", "", "de_lezers");
+        
             echo "<li class=menu_li><a href=../Systeembeheerder>Beheer</a></li>";
 
         }
