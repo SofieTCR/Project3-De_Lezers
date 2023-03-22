@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 09:29 AM
+-- Generation Time: Mar 22, 2023 at 01:28 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -57,7 +57,6 @@ CREATE TABLE `boek` (
   `Auteur` varchar(45) NOT NULL,
   `Omschrijving` varchar(45) NOT NULL,
   `Genre` varchar(45) DEFAULT NULL,
-  `Soort` varchar(45) DEFAULT NULL,
   `Uitgever` varchar(45) DEFAULT NULL,
   `Gewicht` double DEFAULT NULL,
   `Afmetingx` float DEFAULT NULL,
@@ -71,8 +70,8 @@ CREATE TABLE `boek` (
 -- Dumping data for table `boek`
 --
 
-INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Soort`, `Uitgever`, `Gewicht`, `Afmetingx`, `Afmetingy`, `Afmetingz`, `Verchenen`, `minleeftijd`) VALUES
-(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis', 'Fictie', NULL, 'Hans', 192, 23, 13, 2.8, 2018, 12);
+INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Uitgever`, `Gewicht`, `Afmetingx`, `Afmetingy`, `Afmetingz`, `Verchenen`, `minleeftijd`) VALUES
+(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis', 'Fictie', 'Hans', 192, 23, 13, 2.8, 2018, 12);
 
 -- --------------------------------------------------------
 
@@ -103,8 +102,17 @@ CREATE TABLE `klant` (
   `Email` varchar(45) DEFAULT NULL,
   `Telefoon` varchar(45) DEFAULT NULL,
   `Username` varchar(45) NOT NULL,
-  `Password` varchar(45) NOT NULL
+  `Password` varchar(45) NOT NULL,
+  `Administrator` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `klant`
+--
+
+INSERT INTO `klant` (`klantId`, `Voornaam`, `Achternaam`, `Gebdatum`, `Adres`, `Plaats`, `Postcode`, `Email`, `Telefoon`, `Username`, `Password`, `Administrator`) VALUES
+(1, 'Sofie', 'Brink', '2004-08-11', 'Jan Lichthartstraat 200', 'Rotterdam', '3065EK', '9019232@student.zadkine.nl', NULL, 'Sofie9019232', '12345678', NULL),
+(2, 'Sofie', 'Brink', '2004-08-11', 'Jan Lichthartstraat 200', 'Rotterdam', '3065EK', 'SofieBrink@yahoo.com', NULL, 'SofieAdmin', '12345678', 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +239,7 @@ ALTER TABLE `klachten`
 -- AUTO_INCREMENT for table `klant`
 --
 ALTER TABLE `klant`
-  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product`
