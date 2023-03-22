@@ -6,7 +6,7 @@
     <!-- Page Code Goes Here --> 
 
     <!-- Temp until menu gets done -->
-    <a href="../LeveringRetour/Leveringretour.php">click</a> 
+    <a href="../Systeembeheerder/gemiddeldebedrag.php">click</a> 
 
     <?php include("../Library/footer.html"); ?>
 </body>
