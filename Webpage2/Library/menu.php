@@ -9,6 +9,9 @@
     <li class="menu_li"><a href="#">Milleu</a></li>
     <li class="menu_li"><a href="#">Contact</a></li>
     <?php
+        // Include the db functions
+        include("../Library/Database_Functions.php");
+        
         // Enable the session if not already enabled
         if (!isset($_SESSION)) {
             session_start();
@@ -17,9 +20,6 @@
         // Check if you're logged in by checking the existence of a user id. 
         if (isset($_SESSION["klantId"])) {
             echo "<li class=menu_li><a href=../Inlog/Uitlog.php>Uitloggen</a></li>";
-
-            // Include the db functions
-            include("../Library/Database_Functions.php");
 
             // Get the db ready.
             $MyDB = GetDatabase("localhost", "root", "", "de_lezers");
