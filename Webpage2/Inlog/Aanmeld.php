@@ -22,8 +22,6 @@
             </form>
             <?php
                 if (isset($_POST["submit"])) {
-                    // Include the db functions
-                    include("../Library/Database_Functions.php");
 
                     // Get the db ready.
                     $MyDB = GetDatabase("localhost", "root", "", "de_lezers");

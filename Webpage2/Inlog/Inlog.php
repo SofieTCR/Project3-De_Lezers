@@ -14,8 +14,6 @@
             </form>
             <?php
                 if (isset($_POST["submit"])) {
-                    // Include the db functions
-                    include("../Library/Database_Functions.php");
 
                     // Enable the session if not already enabled
                     if (!isset($_SESSION)) {
