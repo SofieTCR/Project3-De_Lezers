@@ -370,3 +370,25 @@ header{
     font-weight: bolder;
     font-size: large;
 }
+
+/* Systeembeheerder CRUD CSS Sofie */
+#Systeembeheerder_Main
+{
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 74vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+}
+
+/* CRUD Display CSS Sofie */
+#Systeembeheer_CRUDtable
+{
+    background-color: gray;
+    padding: 2vh 1vw;
+}
+.Systeembeheer_CRUDcolumn
+{
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+}
