@@ -11,7 +11,9 @@
             if (CheckAdministrator()) { // we are an admin, proceed
                 $MyDB = GetDatabase("localhost", "root", "", "de_lezers");
 
-                CRUDDisplay($MyDB, "boek");
+                if(isset($_POST["submit"])) {
+                    CRUDEdit($MyDB, $_POST["table"], $_POST["submit"], GetPrimaryKeys($_POST)); // Call the editing page
+                }
             }
             else {
                 header("Location: ../Homepage/home.php");

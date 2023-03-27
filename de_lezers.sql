@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 01:28 PM
+-- Generation Time: Mar 27, 2023 at 01:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -55,7 +55,7 @@ CREATE TABLE `boek` (
   `boekId` int(11) NOT NULL,
   `Titel` varchar(45) NOT NULL,
   `Auteur` varchar(45) NOT NULL,
-  `Omschrijving` varchar(45) NOT NULL,
+  `Omschrijving` text NOT NULL,
   `Genre` varchar(45) DEFAULT NULL,
   `Uitgever` varchar(45) DEFAULT NULL,
   `Gewicht` double DEFAULT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE `boek` (
 --
 
 INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Uitgever`, `Gewicht`, `Afmetingx`, `Afmetingy`, `Afmetingz`, `Verchenen`, `minleeftijd`) VALUES
-(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis', 'Fictie', 'Hans', 192, 23, 13, 2.8, 2018, 12);
+(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis naar de noordpool waar hij hagrid verslaat met zijn vantastische vrienden. LEes meer in het volgende deel!!!!!', 'Fictie', 'Hans', 192, 23, 13, 2.8, 2018, 12);
 
 -- --------------------------------------------------------
 
@@ -239,7 +239,7 @@ ALTER TABLE `klachten`
 -- AUTO_INCREMENT for table `klant`
 --
 ALTER TABLE `klant`
-  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`

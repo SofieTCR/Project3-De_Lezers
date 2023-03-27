@@ -21,8 +21,10 @@ function CheckAdministrator() {
     }
 }
 
-Function CRUDDisplay($db, $table, $wantedwidth = 95) {
-    $result = "<table id=Systeembeheer_CRUDtable><tr>";
+Function CRUDDisplay($db, $table) {
+    $result = "<div style='display: flex; align-items: center; margin-bottom: 2vh;'><h2 id=Systeembeheer_CRUDtitle>CRUD " . $table . "</h2>";
+    $result .= "<form method=post action=CRUD_Edit.php><input type=hidden name=table value=" . $table . "><input id=Systeembeheer_CRUDnew type=submit name=submit value='Add New'></form></div>";
+    $result .= "<table id=Systeembeheer_CRUDtable><tr>";
 
     $sql = "SELECT * FROM " . $table;
     $query = ExecuteQuerry($db, $sql);
@@ -34,16 +36,12 @@ Function CRUDDisplay($db, $table, $wantedwidth = 95) {
 
     $sql = "SHOW COLUMNS FROM " . $table;
     $query = ExecuteQuerry($db, $sql);
-    $keys =  $query->fetchAll(PDO::FETCH_ASSOC);
-
-    $cols = (count($keys) + 2);
-    $colwidth = round(($wantedwidth - 2) / $cols - 0.8, 1);
-    
+    $keys =  $query->fetchAll(PDO::FETCH_ASSOC);    
 
     // Create headings
     foreach ($keys as $key) {
         $result .= "<td class=Systeembeheer_CRUDcolumn>" . $key["Field"];
-        foreach ($keydata as $keytype) {
+        foreach ($keydata as $keytype) { // add labels for primary and foreign keys.
             if ($keytype["Column_name"] == $key["Field"]) {
                 if ($keytype["Key_name"] == "PRIMARY") {
                     $result .= " (PK)";
@@ -60,11 +58,20 @@ Function CRUDDisplay($db, $table, $wantedwidth = 95) {
     // Fill in all the rows etc etc.
     foreach ($data as $dat) {
         $result .= "<tr class=Systeembeheer_CRUDrow>";
+        $result .= "<form method=post action=CRUD_Edit.php> <input type=hidden name=table value='" . $table . "'>";
+
         foreach ($keys as $key) {
             $result .= "<td class=Systeembeheer_CRUDcolumn>" . $dat[$key["Field"]] . "</td>";
+            foreach ($keydata as $keytype) {
+                if ($keytype["Column_name"] == $key["Field"]) {
+                    if ($keytype["Key_name"] == "PRIMARY") {
+                        $result .= "<input type=hidden name=PK_" . $key["Field"] . " value='" . $dat[$key["Field"]] . "'>";
+                    }
+                }
+            }
         }
-        $result .= "<form method=post action=edit.php> <td class=Systeembeheer_CRUDcolumn> <input type=hidden name=table value=" . $table . "><input type=hidden name=id value=" . $dat[GetPrimaryKey($dat)] . "><input class=Systeembeheer_CRUDsubmit type=submit value=Wijzig name=submit></td>";
-        $result .= "<td class=Systeembeheer_CRUDcolumn> <input class=Systeembeheer_CRUDsubmit type=submit value=Verwijder name=submit> </td> </form>";
+        $result .= "<td><input class=Systeembeheer_CRUDsubmit type=submit value=Edit name=submit></td>";
+        $result .= "<td class=Systeembeheer_CRUDcolumn> <input class=Systeembeheer_CRUDsubmit type=submit value=Delete name=submit> </td> </form>";
         $result .= "</tr>";
     }
 
@@ -72,7 +79,14 @@ Function CRUDDisplay($db, $table, $wantedwidth = 95) {
     echo $result;
 }
 
-function GetPrimaryKey($par) {
-    return array_keys($par)[0];
+function CRUDEdit($db, $table, $type, $pkarr) {
+    echo $type;
+}
+
+function GetPrimaryKeys($arr) {
+    $pkarr = array_filter($arr, function($key) {
+        return strpos($key, "PK_") === 0;
+    }, ARRAY_FILTER_USE_KEY);
+    return $pkarr;
 }
 ?>

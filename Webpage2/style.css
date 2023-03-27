@@ -380,8 +380,9 @@ header{
     padding-top: 6vh;
     padding-bottom: 6vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* CRUD Display CSS Sofie */
@@ -412,4 +413,21 @@ header{
     font-family: 'Imprima', sans-serif;
     font-weight: bolder;
     text-align: center;
+}
+#Systeembeheer_CRUDtitle
+{
+    font-family: 'Imprima', sans-serif;
+    margin-right: 1vw;
+}
+#Systeembeheer_CRUDnew
+{
+    margin-left: 1vw;
+    background-color: var(--Main-Colour);
+    border: 4px solid var(--Accent-Colour-2);
+    border-radius: 2vh;
+    padding: 0.5vh 0.4vw;
+    font-family: 'Imprima', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: large;
 }
