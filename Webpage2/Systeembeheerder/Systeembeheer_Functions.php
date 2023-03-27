@@ -22,7 +22,7 @@ function CheckAdministrator() {
 }
 
 Function CRUDDisplay($db, $table) {
-    $result = "<div style='display: flex; align-items: center; margin-bottom: 2vh;'><h2 id=Systeembeheer_CRUDtitle>CRUD " . $table . "</h2>";
+    $result = "<div style='display: flex; align-items: center; margin-bottom: 2vh;'><h2 class=Systeembeheer_CRUDtitle>CRUD " . $table . "</h2>";
     $result .= "<form method=post action=CRUD_Edit.php><input type=hidden name=table value=" . $table . "><input id=Systeembeheer_CRUDnew type=submit name=submit value='Add New'></form></div>";
     $result .= "<table id=Systeembeheer_CRUDtable><tr>";
 

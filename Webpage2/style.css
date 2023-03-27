@@ -414,7 +414,7 @@ header{
     font-weight: bolder;
     text-align: center;
 }
-#Systeembeheer_CRUDtitle
+.Systeembeheer_CRUDtitle
 {
     font-family: 'Imprima', sans-serif;
     margin-right: 1vw;
@@ -430,4 +430,25 @@ header{
     font-weight: bolder;
     text-align: center;
     font-size: large;
+}
+.Systeembeheer_CRUDselect
+{
+    min-width: 30vw;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Systeembeheer_CRUDselectlink {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    margin-top: 0.1vh;
+    margin-bottom: 0.1vh;
+  }
+.Systeembeheer_CRUDselectlink:hover {
+    text-decoration: underline;
 }
