@@ -397,11 +397,11 @@ header{
     padding-left: 0.4vw;
     padding-right: 0.4vw;
     text-align: center;
-    /* max-width: 14vw; */
+    max-width: 14vw;
     overflow: hidden;
     font-family: 'Imprima', sans-serif;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap;    
 }
 .Systeembeheer_CRUDsubmit
 {

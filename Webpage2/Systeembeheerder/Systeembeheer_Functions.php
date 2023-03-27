@@ -42,7 +42,7 @@ Function CRUDDisplay($db, $table, $wantedwidth = 95) {
 
     // Create headings
     foreach ($keys as $key) {
-        $result .= "<td class=Systeembeheer_CRUDcolumn style='max-width: " . $colwidth . "vw'>" . $key["Field"];
+        $result .= "<td class=Systeembeheer_CRUDcolumn>" . $key["Field"];
         foreach ($keydata as $keytype) {
             if ($keytype["Column_name"] == $key["Field"]) {
                 if ($keytype["Key_name"] == "PRIMARY") {
@@ -61,10 +61,10 @@ Function CRUDDisplay($db, $table, $wantedwidth = 95) {
     foreach ($data as $dat) {
         $result .= "<tr class=Systeembeheer_CRUDrow>";
         foreach ($keys as $key) {
-            $result .= "<td class=Systeembeheer_CRUDcolumn style='max-width: " . $colwidth . "vw'>" . $dat[$key["Field"]] . "</td>";
+            $result .= "<td class=Systeembeheer_CRUDcolumn>" . $dat[$key["Field"]] . "</td>";
         }
-        $result .= "<form method=post action=edit.php> <td class=Systeembeheer_CRUDcolumn style='max-width: " . $colwidth . "vw'> <input type=hidden name=table value=" . $table . "><input type=hidden name=id value=" . $dat[GetPrimaryKey($dat)] . "><input class=Systeembeheer_CRUDsubmit type=submit value=Wijzig name=submit></td>";
-        $result .= "<td class=Systeembeheer_CRUDcolumn style='max-width: " . $colwidth . "vw'> <input class=Systeembeheer_CRUDsubmit type=submit value=Verwijder name=submit> </td> </form>";
+        $result .= "<form method=post action=edit.php> <td class=Systeembeheer_CRUDcolumn> <input type=hidden name=table value=" . $table . "><input type=hidden name=id value=" . $dat[GetPrimaryKey($dat)] . "><input class=Systeembeheer_CRUDsubmit type=submit value=Wijzig name=submit></td>";
+        $result .= "<td class=Systeembeheer_CRUDcolumn> <input class=Systeembeheer_CRUDsubmit type=submit value=Verwijder name=submit> </td> </form>";
         $result .= "</tr>";
     }
 
