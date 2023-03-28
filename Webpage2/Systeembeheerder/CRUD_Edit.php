@@ -14,6 +14,9 @@
                 if(isset($_POST["submit"])) {
                     CRUDEdit($MyDB, $_POST["table"], $_POST["submit"], GetPrimaryKeys($_POST)); // Call the editing page
                 }
+                else {
+                    header("Location: ../Systeembeheerder/CRUD.php");
+                }
             }
             else {
                 header("Location: ../Homepage/home.php");

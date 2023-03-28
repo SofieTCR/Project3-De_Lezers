@@ -80,7 +80,25 @@ Function CRUDDisplay($db, $table) {
 }
 
 function CRUDEdit($db, $table, $type, $pkarr) {
-    echo $type;
+    //echo $type;
+    if ($type == "Delete") {
+        $sql = "DELETE FROM " . $table . " WHERE "; // start preparing the deletion query
+        
+        for ($i=0; $i < count($pkarr); $i++) { 
+            $sql .= substr(array_keys($pkarr)[$i], 3) . " = '" . $pkarr[array_keys($pkarr)[$i]] . "'";
+            if ($i != count($pkarr) - 1) {
+                $sql .= " AND ";
+            }
+        }
+
+        ExecuteQuerry($db, $sql); // execute the query
+        $hdr = "<form method=post action='./CRUD.php' id=returnform><input type=hidden name=table value=" . $table . "></form><script>document.getElementById('returnform').submit();</script>";
+        echo $hdr;
+        //header("location: ./CRUD.php"); // send the user back to the crud for this table page
+    }
+    else {
+
+    }
 }
 
 function GetPrimaryKeys($arr) {
