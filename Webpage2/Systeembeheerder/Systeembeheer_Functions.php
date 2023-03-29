@@ -93,8 +93,7 @@ function CRUDEdit($db, $table, $type, $pkarr) {
 
         ExecuteQuerry($db, $sql); // execute the query
         $hdr = "<form method=post action='./CRUD.php' id=returnform><input type=hidden name=table value=" . $table . "></form><script>document.getElementById('returnform').submit();</script>";
-        echo $hdr;
-        //header("location: ./CRUD.php"); // send the user back to the crud for this table page
+        echo $hdr; // send the user back to the crud for this table page
     }
     else {
 
