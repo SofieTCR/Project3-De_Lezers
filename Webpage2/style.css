@@ -371,7 +371,7 @@ header{
     font-size: large;
 }
 
-/* Systeembeheerder CRUD CSS Sofie */
+/* Systeembeheerder CSS Sofie */
 #Systeembeheerder_Main
 {
     background-color: var(--Main-Colour);
@@ -386,14 +386,14 @@ header{
 }
 
 /* CRUD Display CSS Sofie */
-#Systeembeheer_CRUDtable
+#Systeembeheer_CRUDDisplaytable
 {
     background-color: var(--Accent-Colour-1);
     border: 4px solid var(--Accent-Colour-2);
     border-radius: 2vw;
     padding: 2vh 1vw;
 }
-.Systeembeheer_CRUDcolumn
+.Systeembeheer_CRUDDisplaycolumn
 {
     padding-left: 0.4vw;
     padding-right: 0.4vw;
@@ -404,7 +404,7 @@ header{
     text-overflow: ellipsis;
     white-space: nowrap;    
 }
-.Systeembeheer_CRUDsubmit
+.Systeembeheer_CRUDDisplaysubmit
 {
     background-color: var(--Main-Colour);
     border: 4px solid var(--Accent-Colour-2);
@@ -414,12 +414,12 @@ header{
     font-weight: bolder;
     text-align: center;
 }
-.Systeembeheer_CRUDtitle
+.Systeembeheer_CRUDDisplaytitle
 {
     font-family: 'Imprima', sans-serif;
     margin-right: 1vw;
 }
-#Systeembeheer_CRUDnew
+#Systeembeheer_CRUDDisplaynew
 {
     margin-left: 1vw;
     background-color: var(--Main-Colour);
@@ -431,7 +431,7 @@ header{
     text-align: center;
     font-size: large;
 }
-.Systeembeheer_CRUDselect
+.Systeembeheer_CRUDDisplayselect
 {
     min-width: 30vw;
     min-height: 10vh;
@@ -439,7 +439,8 @@ header{
     flex-direction: column;
     align-items: center;
 }
-.Systeembeheer_CRUDselectlink {
+.Systeembeheer_CRUDDisplayselectlink
+{
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -448,7 +449,7 @@ header{
     font-family: inherit;
     margin-top: 0.1vh;
     margin-bottom: 0.1vh;
-  }
-.Systeembeheer_CRUDselectlink:hover {
+}
+.Systeembeheer_CRUDDisplayselectlink:hover {
     text-decoration: underline;
 }

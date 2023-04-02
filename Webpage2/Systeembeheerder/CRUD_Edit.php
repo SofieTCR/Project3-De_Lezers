@@ -7,6 +7,7 @@
     <!-- Page Code Goes Here -->
 
     <main id="Systeembeheerder_Main">
+        <div id="Aanmeld_Div">
         <?php
             if (CheckAdministrator()) { // we are an admin, proceed
                 $MyDB = GetDatabase("localhost", "root", "", "de_lezers");
@@ -22,6 +23,7 @@
                 header("Location: ../Homepage/home.php");
             }
         ?>
+        </div>
     </main>
 
     <?php include("../Library/footer.html"); ?>
