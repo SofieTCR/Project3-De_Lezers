@@ -99,21 +99,9 @@ function CRUDEdit($db, $table, $type, $pkarr) {
         echo $hdr; // send the user back to the crud for this table page
     }
     else if ($type == "Update") {
-        $sql = "SELECT * FROM " . $table . " WHERE ";
-        for ($i=0; $i < count($pkarr); $i++) { 
-            $sql .= substr(array_keys($pkarr)[$i], 3) . " = '" . $pkarr[array_keys($pkarr)[$i]] . "'";
-            if ($i != count($pkarr) - 1) {
-                $sql .= " AND ";
-            }
-        }
+        $sql = "SHOW COLUMNS FROM " . $table;
         $query = ExecuteQuerry($db, $sql);
-        $result =  $query->fetchAll(PDO::FETCH_ASSOC);
-
-        if (count($result) != 0) {
-            echo ("Error 405: Record already exists. please edit it instead!");
-            exit;
-        }
-
+        $keys =  $query->fetchAll(PDO::FETCH_ASSOC);
         
         $sql = "UPDATE " . $table . " SET ";
         
@@ -147,7 +135,6 @@ function CRUDEdit($db, $table, $type, $pkarr) {
         $sql = "SHOW COLUMNS FROM " . $table;
         $query = ExecuteQuerry($db, $sql);
         $keys =  $query->fetchAll(PDO::FETCH_ASSOC);
-
         
         $sql = "INSERT INTO " . $table . " (";
         foreach ($keys as $key) {
