@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "username";
 $password = "";
-$dbname = "";
+$dbname = "de_lezers";
 
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -14,9 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $onderwerp = $_POST['onderwerp'];
   $bericht = $_POST['bericht'];
-
+  
   // data in de database
-  $stmt = $conn->prepare("INSERT INTO feedback (naam, email, onderwerp, bericht) VALUES (:naam, :email, :onderwerp, :bericht)");
+  $stmt = $conn->prepare("INSERT INTO klachten (naam, email, onderwerp, bericht) VALUES (:naam, :email, :onderwerp, :bericht)");
   $stmt->bindParam(':naam', $naam);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':onderwerp', $onderwerp);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2023 at 01:18 PM
+-- Generation Time: Mar 29, 2023 at 10:16 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -31,6 +31,7 @@ CREATE TABLE `bestelling` (
   `bestellingId` int(11) NOT NULL,
   `klantId` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
+  `datum` date NOT NULL DEFAULT current_timestamp(),
   `status` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -42,7 +43,8 @@ CREATE TABLE `bestelling` (
 
 CREATE TABLE `bestelling_has_product` (
   `Bestelling_bestellingId` int(11) NOT NULL,
-  `Product_productId` int(11) NOT NULL
+  `Product_productId` int(11) NOT NULL,
+  `aantal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -71,7 +73,7 @@ CREATE TABLE `boek` (
 --
 
 INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Uitgever`, `Gewicht`, `Afmetingx`, `Afmetingy`, `Afmetingz`, `Verchenen`, `minleeftijd`) VALUES
-(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis naar de noordpool waar hij hagrid verslaat met zijn vantastische vrienden. LEes meer in het volgende deel!!!!!', 'Fictie', 'Hans', 192, 23, 13, 2.8, 2018, 12);
+(1, 'Harry Potter Deel 1', 'JK Rowling', 'Harry potter op reis naar de noordpool waar hij hagrid verslaat met zijn vantastische vrienden. LEes meer in het volgende deel!!!!!', 'Fictie', 'JK Rowling', 192, 23, 13, 2.8, 2018, 12);
 
 -- --------------------------------------------------------
 
@@ -81,7 +83,7 @@ INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Uitge
 
 CREATE TABLE `klachten` (
   `klachtId` int(11) NOT NULL,
-  `Klant_klantId` int(11) NOT NULL,
+  `Klant_klantId` int(11) DEFAULT NULL,
   `bericht` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -111,8 +113,8 @@ CREATE TABLE `klant` (
 --
 
 INSERT INTO `klant` (`klantId`, `Voornaam`, `Achternaam`, `Gebdatum`, `Adres`, `Plaats`, `Postcode`, `Email`, `Telefoon`, `Username`, `Password`, `Administrator`) VALUES
-(1, 'Sofie', 'Brink', '2004-08-11', 'Jan Lichthartstraat 200', 'Rotterdam', '3065EK', '9019232@student.zadkine.nl', NULL, 'Sofie9019232', '12345678', NULL),
-(2, 'Sofie', 'Brink', '2004-08-11', 'Jan Lichthartstraat 200', 'Rotterdam', '3065EK', 'SofieBrink@yahoo.com', NULL, 'SofieAdmin', '12345678', 1);
+(0, 'Sofie', 'Brink', '2004-08-11', 'Jan Lichthartstraat 200', 'Rotterdam', '3065EK', '9019232@student.zadkine.nl', NULL, 'Sofie9019232', '12345678', NULL),
+(1, 'Sofie', 'Brink', '2004-08-11', 'Jan Lichthartstraat 200', 'Rotterdam', '3065EK', 'SofieBrink@yahoo.com', NULL, 'SofieAdmin', '12345678', 1);
 
 -- --------------------------------------------------------
 
@@ -123,7 +125,7 @@ INSERT INTO `klant` (`klantId`, `Voornaam`, `Achternaam`, `Gebdatum`, `Adres`, `
 CREATE TABLE `product` (
   `productId` int(11) NOT NULL,
   `naam` varchar(45) DEFAULT NULL,
-  `Soort` varchar(45) DEFAULT NULL,
+  `soort` varchar(45) DEFAULT NULL,
   `prijs` float NOT NULL,
   `vooraad` double NOT NULL,
   `fotoURL` varchar(45) DEFAULT NULL
@@ -133,15 +135,15 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`productId`, `naam`, `Soort`, `prijs`, `vooraad`, `fotoURL`) VALUES
-(4, 'Harry Potter', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
-(5, 'Harry Potter1', NULL, 9.5, 17, 'Harry_Potter_bundle.png'),
-(6, 'Harry Potter2', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
-(7, 'Harry Potter3', NULL, 25.5, 17, 'maxmaximonsters.png'),
-(8, 'Harry Potter4', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
-(9, 'Harry Potter5', NULL, 44.99, 17, 'Harry_Potter_bundle.png'),
-(10, 'Harry Potter6', NULL, 199.99, 17, 'Harry_Potter_bundle.png'),
-(11, 'Max en de maximonsters', NULL, 99.99, 99, 'maxmaximonsters.png');
+INSERT INTO `product` (`productId`, `naam`, `soort`, `prijs`, `vooraad`, `fotoURL`) VALUES
+(1, 'Harry Potter1', NULL, 9.5, 17, 'Harry_Potter_bundle.png'),
+(2, 'Harry Potter2', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
+(3, 'Harry Potter3', NULL, 25.5, 17, 'maxmaximonsters.png'),
+(4, 'Harry Potter4', NULL, 19.99, 17, 'Harry_Potter_bundle.png'),
+(5, 'Harry Potter5', NULL, 44.99, 17, 'Harry_Potter_bundle.png'),
+(6, 'Harry Potter6', NULL, 199.99, 17, 'Harry_Potter_bundle.png'),
+(7, 'Max en de maximonsters', NULL, 99.99, 99, 'maxmaximonsters.png'),
+(9, 'Harry Potter', NULL, 19.99, 17, 'Harry_Potter_bundle.png');
 
 -- --------------------------------------------------------
 
@@ -239,13 +241,13 @@ ALTER TABLE `klachten`
 -- AUTO_INCREMENT for table `klant`
 --
 ALTER TABLE `klant`
-  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `klantId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
