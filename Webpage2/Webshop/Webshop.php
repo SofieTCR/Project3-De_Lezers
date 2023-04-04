@@ -10,7 +10,7 @@
         $MyDB = GetDatabase("localhost", "root", "", "de_lezers");
         
         if ($MyDB != null) {
-            $query = ExecuteQuerry($MyDB, "SELECT * FROM product ORDER BY product.naam DESC");
+            $query = ExecuteQuerry($MyDB, "SELECT * FROM product ORDER BY product.naam ASC");
 
             $result =  $query->fetchAll(PDO::FETCH_ASSOC);
             
@@ -21,7 +21,7 @@
                 $Products .= "<section class=Webshop_Product>";
                 $Products .= "<div class=Webshop_Product_Topbar>";
                 $Products .= "<p class=Webshop_Product_Title>" . $product['naam'] . "</p>";
-                $Products .= "<p class=Webshop_Product_Price>€" . $product['prijs'] . "</p>";
+                $Products .= "<p class=Webshop_Product_Price>€" . number_format($product['prijs'], 2, ".") . "</p>";
                 $Products .= "</div>";
                 $Products .= "<div class=Webshop_Product_Imgdiv><img class=Webshop_Product_Img alt='" . $product['naam'] . "_foto' src=../img/ProductImages/" . $product['fotoURL'] . "></div>";
                 $Products .= "</section>";
