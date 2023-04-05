@@ -225,6 +225,7 @@ header{
 #med_main
 {
     min-height: 86vh;
+    padding-bottom: 6vh;
 }
 .medbody {
     background-color: #E5DCC6;
@@ -233,6 +234,7 @@ header{
 .med-flex-container {
     display: flex;
     justify-content: space-evenly;
+    
 }
   
 .med-flex-container div {
@@ -240,10 +242,10 @@ header{
     margin: 10px;
     padding: 20px;
     font-size: 20px;
-    height: 20vw;
     width: 12vw;
-    
+    min-height: 20vw;
 }
+
 
 .medh1 {
     display: flex;
@@ -255,6 +257,7 @@ header{
     width: 30vw;
     
 }
+
 
 .meddiv {
    
@@ -274,7 +277,10 @@ header{
 
 .medh2 {
     margin-top: 120px;
+    max-height: 1000px;
 }
+
+
 
 /* Inlog CSS Sofie */
 #Inlog_Main
