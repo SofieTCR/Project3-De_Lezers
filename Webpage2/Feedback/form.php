@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
   <?php include("../Library/menu.php"); ?>
-  <h1 class="formh1">Laat alstublijft uw feedback achter, zodat we onze services verbeteren!</h1>
+  <h1 class="formh1">Laat alstublijft uw feedback achter, zodat we onze services kunnen verbeteren!</h1>
   <main id="Form_Main">
     <div id="Form_Div">
       <form method="POST"> <br> <br>
