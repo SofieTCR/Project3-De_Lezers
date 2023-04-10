@@ -491,3 +491,82 @@ header{
 .Systeembeheer_CRUDDisplayselectlink:hover {
     text-decoration: underline;
 }
+
+/* Form CSS Rohan */
+
+#Form_Main {
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 80vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #Form_Div {
+    width: 35vw;
+    height: 55vh;
+    background-color: var(--Accent-Colour-2);
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-family: 'Imprima', sans-serif;
+    color: white;
+  }
+  
+  #Form_Submit {
+    display: flex;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    border-radius: 1.5vh;
+    font-family: 'Imprima', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+}
+
+  .Form_Row {
+    min-width: 25vw;
+    height: 2.5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Form_Row input{
+    height: 4vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
+  }
+  .Form_Row textarea{
+    height: 10vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
+    
+  }
+  
+  .Form_Row input:focus, 
+  .Form_Row textarea:focus {
+    outline: none;
+  }
+  
+  .formh1{
+    display: flex;
+    justify-content: center; 
+    padding-top: 4vh;
+    background-color: var(--Main-Colour);
+    font-family: 'Imprima', sans-serif;
+  }
+  
