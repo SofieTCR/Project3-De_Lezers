@@ -124,10 +124,35 @@ header{
 /* Homepage CSS */
 #Homepage_Main
 {
-    background-color: var(--Main-Colour);
+    /* background-color: var(--Main-Colour); */
+    background-image: url('./img/boeken.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 100vw;
     min-height: 80vh;
     padding-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+#Homepage_Logo_Trapezoid
+{
+    margin-top: 10vh;
+    border-top: 10vh solid #DBB79B;
+	border-left: 2.5vw solid transparent;
+	border-right: 2.5vw solid transparent;
+	height: 0;
+	width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Libre Barcode 39 Text';
+}
+#Homepage_Logo_Trapezoid p
+{
+    margin-top: -10vh;
+    font-size: 40px;
+    font-weight: 450;
 }
 
 /* Levering & Retour Sofie*/
