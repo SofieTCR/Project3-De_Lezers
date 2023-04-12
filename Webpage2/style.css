@@ -145,20 +145,51 @@ header{
 {
     width: 18vw;
     min-height: 60vh;
-    background-color: lightgray;
+    /* background-color: lightgray; */
 
 }
 #Webshop_FilterDiv
 {
     width: 18vw;
-    background-color: green;
+    background-color: rgb(224, 224, 224);
+    border: 0.3vw solid lightgrey;
+    border-radius: 2vw;
+    padding-bottom: 2vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
-#Webshop_FilterDiv Input[type=number]
+#Webshop_Filter_Price
 {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Webshop_Filter_Price input[type=number]
+{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 4vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
     text-align: center;
+    width: 4vw;
+}
+#Webshop_Filter_Price input[type=number]:focus
+{
+    outline: none;
+}
+#Webshop_Filter_Soort
+{
+    margin-top: 2vh;
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 #Webshop_ProductSection
 {
