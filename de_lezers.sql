@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2023 at 12:11 PM
+-- Generation Time: Apr 12, 2023 at 10:07 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -121,18 +121,20 @@ INSERT INTO `boek` (`boekId`, `Titel`, `Auteur`, `Omschrijving`, `Genre`, `Uitge
 
 CREATE TABLE `klachten` (
   `klachtId` int(11) NOT NULL,
-  `Klant_klantId` int(11) DEFAULT NULL,
-  `bericht` text DEFAULT NULL
+  `naam` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `onderwerp` varchar(255) NOT NULL,
+  `bericht` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `klachten`
 --
 
-INSERT INTO `klachten` (`klachtId`, `Klant_klantId`, `bericht`) VALUES
-(1, 5, 'Ik ben zo gefrustreerd door de slechte klantenservice in deze boekenwinkel! De medewerkers zijn onbeschoft en onbehulpzaam, en lijken geen idee te hebben waar iets zich in de winkel bevindt. Het duurde eeuwen om iemand te vinden die me kon helpen bij het vinden van het boek dat ik nodig had, en toen ik eindelijk hulp kreeg, bleek het boek niet op voorraad te zijn. Wat een verspilling van mijn tijd en energie'),
-(2, 10, 'Ik heb onlangs een boek besteld bij een online boekenwinkel en ik was niet tevreden over de kwaliteit van het boek dat ik ontving. Het boek was beschadigd en had duidelijke tekenen van slijtage, alsof het al vele malen was gelezen. Toen ik contact opnam met de klantenservice van de winkel om het probleem aan te kaarten, waren ze onbehulpzaam en onverschillig. Ik voelde me genegeerd en ontevreden over mijn aankoop. Dit was een teleurstellende ervaring en ik zal waarschijnlijk niet meer bij deze winkel kopen.'),
-(3, NULL, 'Ik was onlangs aan het browsen op de website van een online boekenwinkel en ik vond het erg frustrerend dat ik de boeken niet kon vinden die ik zocht. De zoekfunctie was niet erg nuttig en de categorieën waren verwarrend. Ik heb veel tijd verspild met het proberen te vinden van boeken die ik wilde lezen en uiteindelijk besloot ik om naar een andere website te gaan. Het was een teleurstellende ervaring en het heeft me ervan weerhouden om terug te keren naar deze winkel om te winkelen in de toekomst.');
+INSERT INTO `klachten` (`klachtId`, `naam`, `email`, `onderwerp`, `bericht`) VALUES
+(1, 'Ans Peeters', 'anspeeters456@hotmail.com', 'Slechte Service', 'Ik ben zo gefrustreerd door de slechte klantenservice in deze boekenwinkel! De medewerkers zijn onbeschoft en onbehulpzaam, en lijken geen idee te hebben waar iets zich in de winkel bevindt. Het duurde eeuwen om iemand te vinden die me kon helpen bij het vinden van het boek dat ik nodig had, en toen ik eindelijk hulp kreeg, bleek het boek niet op voorraad te zijn. Wat een verspilling van mijn tijd en energie'),
+(2, 'Wilma van Schouten', 'wilmavanschouten87@gmail.com', 'Boek Versleten', 'Ik heb onlangs een boek besteld bij een online boekenwinkel en ik was niet tevreden over de kwaliteit van het boek dat ik ontving. Het boek was beschadigd en had duidelijke tekenen van slijtage, alsof het al vele malen was gelezen. Toen ik contact opnam met de klantenservice van de winkel om het probleem aan te kaarten, waren ze onbehulpzaam en onverschillig. Ik voelde me genegeerd en ontevreden over mijn aankoop. Dit was een teleurstellende ervaring en ik zal waarschijnlijk niet meer bij deze winkel kopen.'),
+(3, 'Maartje Vink', 'maartje.vink567@hotmail.com', 'Boek niet kunnen vinden', 'Ik was onlangs aan het browsen op de website van een online boekenwinkel en ik vond het erg frustrerend dat ik de boeken niet kon vinden die ik zocht. De zoekfunctie was niet erg nuttig en de categorieën waren verwarrend. Ik heb veel tijd verspild met het proberen te vinden van boeken die ik wilde lezen en uiteindelijk besloot ik om naar een andere website te gaan. Het was een teleurstellende ervaring en het heeft me ervan weerhouden om terug te keren naar deze winkel om te winkelen in de toekomst.');
 
 -- --------------------------------------------------------
 
@@ -267,8 +269,7 @@ ALTER TABLE `boek`
 -- Indexes for table `klachten`
 --
 ALTER TABLE `klachten`
-  ADD PRIMARY KEY (`klachtId`),
-  ADD KEY `fk_Klachten_Klant1_idx` (`Klant_klantId`);
+  ADD PRIMARY KEY (`klachtId`);
 
 --
 -- Indexes for table `klant`
@@ -340,12 +341,6 @@ ALTER TABLE `bestelling`
 ALTER TABLE `bestelling_has_product`
   ADD CONSTRAINT `fk_Bestelling_has_Product_Bestelling1` FOREIGN KEY (`Bestelling_bestellingId`) REFERENCES `bestelling` (`bestellingId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Bestelling_has_Product_Product1` FOREIGN KEY (`Product_productId`) REFERENCES `product` (`productId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `klachten`
---
-ALTER TABLE `klachten`
-  ADD CONSTRAINT `fk_Klachten_Klant1` FOREIGN KEY (`Klant_klantId`) REFERENCES `klant` (`klantId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `product_has_boek`
