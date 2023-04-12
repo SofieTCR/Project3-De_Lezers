@@ -61,6 +61,41 @@ header{
     border: 9px;
     border-radius: 14px;
 }
+/*Milleu Shondrique*/
+#Milleu_Main
+{
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+}
+.Milleu_Section
+{
+    width: 35vw;
+    height: 26vh;
+    margin-left: 8vw;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    font-family: 'Imprima', sans-serif;
+}
+.Milleu_Subtitle
+{
+    margin-bottom: 2vh;
+}
+.Milleu_Paragraph
+{
+    margin-top: 2vh;
+    margin-bottom: 2vh; 
+}
+.Milleu_ListItem
+{
+    margin-left: 2vw;
+}
+
+
+
 
 /* Footer CSS Sofie*/
 #Footer_Div
@@ -89,10 +124,35 @@ header{
 /* Homepage CSS */
 #Homepage_Main
 {
-    background-color: var(--Main-Colour);
+    /* background-color: var(--Main-Colour); */
+    background-image: url('./img/boeken.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 100vw;
     min-height: 80vh;
     padding-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+#Homepage_Logo_Trapezoid
+{
+    margin-top: 10vh;
+    border-top: 10vh solid #DBB79B;
+	border-left: 2.5vw solid transparent;
+	border-right: 2.5vw solid transparent;
+	height: 0;
+	width: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Libre Barcode 39 Text';
+}
+#Homepage_Logo_Trapezoid p
+{
+    margin-top: -10vh;
+    font-size: 40px;
+    font-weight: 450;
 }
 
 /* Levering & Retour Sofie*/
@@ -121,7 +181,7 @@ header{
 .LeveringRetour_Paragraph
 {
     margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-bottom: 2vh; 
 }
 .LeveringRetour_ListItem
 {
@@ -145,20 +205,51 @@ header{
 {
     width: 18vw;
     min-height: 60vh;
-    background-color: lightgray;
+    /* background-color: lightgray; */
 
 }
 #Webshop_FilterDiv
 {
     width: 18vw;
-    background-color: green;
+    background-color: rgb(224, 224, 224);
+    border: 0.3vw solid lightgrey;
+    border-radius: 2vw;
+    padding-bottom: 2vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
-#Webshop_FilterDiv Input[type=number]
+#Webshop_Filter_Price
 {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Webshop_Filter_Price input[type=number]
+{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 4vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
     text-align: center;
+    width: 4vw;
+}
+#Webshop_Filter_Price input[type=number]:focus
+{
+    outline: none;
+}
+#Webshop_Filter_Soort
+{
+    margin-top: 2vh;
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 #Webshop_ProductSection
 {

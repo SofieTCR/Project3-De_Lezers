@@ -34,7 +34,7 @@
                 $sql .= " product.naam LIKE '%" . filter_var($_POST["searchbar"], FILTER_SANITIZE_STRING) . "%'";
                 if ($_POST['soort'] != "all") {
                     $sql .= " AND product.soort = '" . $_POST["soort"] . "'";                    
-                } 
+                }
                 $sql .= " AND product.prijs BETWEEN '" . $_POST["minprice"] - 0.01 . "' AND '" . $_POST["maxprice"] . "'";
             }
             else {
@@ -76,7 +76,7 @@
                     <?php
                         $output = "";
                         if (isset($_POST["submit"])) {
-                            $output .= "<label>Alle</label><input type=radio name=soort value=all"; 
+                            $output .= "<div id=Webshop_Filter_Soort><label>Alle</label><input type=radio name=soort value=all"; 
                             if ($_POST["soort"] == "all") { $output .= " checked=checked"; }
                             $output .= " onchange='UpdateForm()'>";
                             foreach ($Types as $Type) {
@@ -84,16 +84,16 @@
                                 if ($_POST["soort"] == $Type['soort']) { $output .= " checked=checked"; }
                                 $output .= " onchange='UpdateForm()'>";
                             }
-                            $output .= "<input type=number name=minprice step=0.01 value='" . $_POST["minprice"] . "' onchange='UpdateForm()' min='" . $Prices[0]["minprice"] . "' max='" . $_POST["maxprice"] . "'>";
-                            $output .= "<input type=number name=maxprice step=0.01 value='" . $_POST["maxprice"] . "' onchange='UpdateForm()' min='" . $_POST["minprice"] . "' max='" . $Prices[0]["maxprice"] . "'>";
+                            $output .= "</div><div id=Webshop_Filter_Price><input required type=number name=minprice step=0.01 value='" . $_POST["minprice"] . "' onchange='UpdateForm()' min='" . $Prices[0]["minprice"] . "' max='" . $_POST["maxprice"] . "'><p>Prijs</p>";
+                            $output .= "<input required type=number name=maxprice step=0.01 value='" . $_POST["maxprice"] . "' onchange='UpdateForm()' min='" . $_POST["minprice"] . "' max='" . $Prices[0]["maxprice"] . "'></div>";
                         }
                         else {
-                            $output .= "<label>Alle</label><input type=radio name=soort value=all checked=checked onchange='UpdateForm()'>";
+                            $output .= "<div id=Webshop_Filter_Soort><label>Alle</label><input type=radio name=soort value=all checked=checked onchange='UpdateForm()'>";
                             foreach ($Types as $Type) {
                                 $output .= "<label>" . $Type['soort']. "</label><input type=radio name=soort value='" . $Type['soort'] . "' onchange='UpdateForm()'>";
                             }
-                            $output .= "<input type=number name=minprice step=0.01 value='" . $Prices[0]["minprice"] . "' onchange='UpdateForm()' min='" . $Prices[0]["minprice"] . "' max='" . $Prices[0]["maxprice"] . "'>";
-                            $output .= "<input type=number name=maxprice step=0.01 value='" . $Prices[0]["maxprice"] . "' onchange='UpdateForm()' min='" . $Prices[0]["minprice"] . "' max='" . $Prices[0]["maxprice"] . "'>";
+                            $output .= "</div><div id=Webshop_Filter_Price><input required type=number name=minprice step=0.01 value='" . $Prices[0]["minprice"] . "' onchange='UpdateForm()' min='" . $Prices[0]["minprice"] . "' max='" . $Prices[0]["maxprice"] . "'><p>Prijs</p>";
+                            $output .= "<input required type=number name=maxprice step=0.01 value='" . $Prices[0]["maxprice"] . "' onchange='UpdateForm()' min='" . $Prices[0]["minprice"] . "' max='" . $Prices[0]["maxprice"] . "'></div>";
 
                         }
                         echo $output;
