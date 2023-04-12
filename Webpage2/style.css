@@ -170,24 +170,68 @@ header{
     max-width: 100vw;
     min-height: 80vh;
     padding-top: 6vh;
+    padding-bottom: 6vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-family: 'Imprima', sans-serif;
 }
-#Webshop_FilterDiv
+#Webshop_FilterSection
 {
     width: 18vw;
     min-height: 60vh;
-    background-color: lightgray;
+    /* background-color: lightgray; */
 
 }
-#Webshop_ProductDiv
+#Webshop_FilterDiv
+{
+    width: 18vw;
+    background-color: rgb(224, 224, 224);
+    border: 0.3vw solid lightgrey;
+    border-radius: 2vw;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Webshop_Filter_Price
+{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Webshop_Filter_Price input[type=number]
+{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    height: 4vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
+    text-align: center;
+    width: 4vw;
+}
+#Webshop_Filter_Price input[type=number]:focus
+{
+    outline: none;
+}
+#Webshop_Filter_Soort
+{
+    margin-top: 2vh;
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#Webshop_ProductSection
 {
     width: 70vw;
     min-height: 60vh;
     /* background-color: green; */
-    border: 4px solid var(--Accent-Colour-2);
+    border: 0.3vw solid var(--Accent-Colour-2);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -199,6 +243,33 @@ header{
     height: 8vh;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
+    margin-top: 1vh;
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#Webshop_SearchBar input
+{
+    padding: 1vh 1vw;
+    font-family: 'Imprima', sans-serif;
+    border: none;
+    font-size: larger;
+}
+#Webshop_SearchBar input:focus
+{
+    outline: none;
+}
+#Webshop_SearchBar_Field
+{
+    height: 5vh;
+    width: 50vw;
+    background-color: rgb(224, 224, 224);
+}
+#Webshop_SearchBar_Button
+{
+    width: 15vw;
+    height: 7vh;
     background-color: lightgray;
 }
 .Webshop_Product
@@ -260,6 +331,7 @@ header{
 #med_main
 {
     min-height: 86vh;
+    padding-bottom: 6vh;
 }
 .medbody {
     background-color: #E5DCC6;
@@ -268,6 +340,7 @@ header{
 .med-flex-container {
     display: flex;
     justify-content: space-evenly;
+    
 }
   
 .med-flex-container div {
@@ -275,10 +348,10 @@ header{
     margin: 10px;
     padding: 20px;
     font-size: 20px;
-    height: 20vw;
     width: 12vw;
-    
+    min-height: 20vw;
 }
+
 
 .medh1 {
     display: flex;
@@ -290,6 +363,11 @@ header{
     width: 30vw;
     
 }
+.medpimg
+{
+    width: 12vw;
+}
+
 
 .meddiv {
    
@@ -308,8 +386,11 @@ header{
 }
 
 .medh2 {
-    margin-top: 120px;
+    /* margin-top: 120px;  */ /* Heb dit even verwijdered vanwege de foto */
+    max-height: 1000px;
 }
+
+
 
 /* Inlog CSS Sofie */
 #Inlog_Main
@@ -520,3 +601,82 @@ header{
 .Systeembeheer_CRUDDisplayselectlink:hover {
     text-decoration: underline;
 }
+
+/* Form CSS Rohan */
+
+#Form_Main {
+    background-color: var(--Main-Colour);
+    max-width: 100vw;
+    min-height: 80vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #Form_Div {
+    width: 35vw;
+    height: 55vh;
+    background-color: var(--Accent-Colour-2);
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-family: 'Imprima', sans-serif;
+    color: white;
+  }
+  
+  #Form_Submit {
+    display: flex;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    border-radius: 1.5vh;
+    font-family: 'Imprima', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+}
+
+  .Form_Row {
+    min-width: 25vw;
+    height: 2.5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Form_Row input{
+    height: 4vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
+  }
+  .Form_Row textarea{
+    height: 10vh;
+    background-color: var(--Main-Colour);
+    border: 2px solid var(--Accent-Colour-1);
+    padding-left: 1vw;
+    border-radius: 1.5vh;
+    outline: none;
+    
+  }
+  
+  .Form_Row input:focus, 
+  .Form_Row textarea:focus {
+    outline: none;
+  }
+  
+  .formh1{
+    display: flex;
+    justify-content: center; 
+    padding-top: 4vh;
+    background-color: var(--Main-Colour);
+    font-family: 'Imprima', sans-serif;
+  }
+  

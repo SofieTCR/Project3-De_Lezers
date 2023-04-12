@@ -7,7 +7,7 @@
     <li class="menu_li"><a href="../Webshop/Webshop.php">Webshop</a></li>
     <li class="menu_li"><a href="../LeveringRetour/Leveringretour.php">Retour Policy</a></li>
     <li class="menu_li"><a href="../Milleu/milleu.php">Milleu</a></li>
-    <li class="menu_li"><a href="#">Contact</a></li>
+    <li class="menu_li"><a href="../Feedback/form.php">Contact</a></li>
     <?php
         // Include the db functions
         include("../Library/Database_Functions.php");
